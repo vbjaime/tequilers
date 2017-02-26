@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <a class="navbar-brand text-center" href="#">Send message</a>
+  </nav>
+<div class="container">
+ 		<div class="form-group">
+    	<label for="message">Message: </label>
+    	<textarea class="form-control" id="message" rows="3">{{messageReplaced}}</textarea>
+    	<span id="counter">0 out of 160 chars used.</span>
+    	<div class="form-group">
+				<label class="custom-control custom-checkbox">
+  				<input type="checkbox" class="custom-control-input">
+    			<span class="custom-control-indicator"></span>
+  				<span class="custom-control-description">Send as high priority<p style="color:gray;">High priority messages are re-send each "X" time.</p></span>
+				</label>
+		</div>
+		<div class="form-group">
+			<button class="form-control btn btn-primary">Send message</button>
+		</div>
+		<button class="form-control btn btn-secondary" ng-click="clickBackToLocation()">Back</button>
+	</div>
+</div>
+<script>
+  $('#message').keyup(updateCount);
+  $('#message').keydown(updateCount);
+
+  function updateCount() {
+	if ($(this).val().length < 160) {
+    	   $("#counter").text($(this).val().length + "out of 160 chars used");
+    } else {
+    	   $("#counter").text("Limit reached.");
+		}
+  }
+</script>

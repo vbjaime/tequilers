@@ -1,0 +1,54 @@
+{
+  "name": "Patient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fileId": {
+      "type": "any",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "picture": {
+      "type": "any"
+    },
+    "bloodType": {
+      "type": "string",
+      "required": true
+    },
+    "contacts": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

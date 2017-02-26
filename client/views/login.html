@@ -1,0 +1,19 @@
+<div class="container">
+  <form class="form-signin form-control" ng-submit=login(user,pwd)>
+    <h2 class="form-signin-heading">Tequilers Hospital</h2>
+    <p><img src="img/agave.png" class="img-fluid rounded mx-auto d-block"></p>
+    <div class="alert alert-danger" ng-show="test">
+    	User or password not valid.
+    </div>
+    <p><label for="inputEmail" class="sr-only">User</label>
+    <input id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email" ng-model="user"></p>
+    <p><label for="inputPassword" class="sr-only">Password</label>
+    <input id="inputPassword" class="form-control" placeholder="Password" required="" type="password" ng-model="pwd"></p>
+    <div class="checkbox">
+      <label>
+        <input value="remember-me" type="checkbox"> Save credentials
+      </label>
+    </div>
+    <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit" >Log in</button>
+  </form>
+</div>

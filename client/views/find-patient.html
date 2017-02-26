@@ -1,0 +1,23 @@
+<div id="find-patient-view" class="container" ng-show="patientSearchView">
+	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+		<a class="navbar-brand" href="#">Find your patient</a>
+	</nav>
+	<div class="container">
+		<form class="form-group row" name="search-patient" ng-init ="searchFirstPatient()">
+	    	<label class="col-form-label sr-only">Patient's name or expedient #: </label>
+	    	<input id="searchInput" type="text" class="form-control" placeholder="Patient's name or expedient number" ng-model="patientName" ng-change="searchPatient(patientName)">
+	    </form>
+		<div class="row">
+			<div class="card" ng-repeat="patient in patients">
+	      		<img ng-click="selectPatient(patient)"  alt="100%x280" style="width: 100%; display: block;" src="{{patient.picture}}" data-holder-rendered="true">
+	       		<label class="card-text text-truncate">{{patient.name}}</label>
+	            <label class="card-text text-truncate">Expedient {{patient.fileId}}</label>
+	            <a href="javascript:alert('Cooming soon!');" class="card-text text-truncate">Messages...</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-include="'views/select-action.html'" ng-show="selectActionView"></div>
+<div ng-include="'views/location.html'" ng-show="locationView"></div>
+<div ng-include="'views/message-template.html'" ng-show="messageTemplateView"></div>
+<div ng-include="'views/message-template.html'" ng-show="otherLocation"></div>

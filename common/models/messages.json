@@ -1,0 +1,74 @@
+{
+  "name": "Messages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "sendTo": {
+      "type": "string",
+      "required": true
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "sendDate": {
+      "type": "date",
+      "required": true
+    },
+    "deliveryDate": {
+      "type": "date"
+    },
+    "priority": {
+      "type": "string",
+      "required": true
+    },
+    "smsId": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": ""
+    },
+    "minifiedRedirect": {
+      "type": "belongsTo",
+      "model": "MinifiedRedirects",
+      "foreignKey": ""
+    }
+  },
+
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "Read"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    }
+  ],
+  "methods": {}
+}

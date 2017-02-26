@@ -1,0 +1,35 @@
+{
+  "name": "MinifiedRedirects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "minifiedURI": {
+      "type": "string",
+      "required": true
+    },
+    "redirectTo": {
+      "type": "string",
+      "required": true
+    },
+    "expirationDate": {
+      "type": "date"
+    },
+    "expired": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "message": {
+      "type": "belongsTo",
+      "model": "Messages",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

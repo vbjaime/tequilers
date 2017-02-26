@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDs": {
+    "host": "ds145359.mlab.com",
+    "port": 45359,
+    "url": "mongodb://admin:notimed-tekillers@ds145359.mlab.com:45359/notimed-test",
+    "database": "notimed-test",
+    "password": "notimed-tekillers",
+    "name": "mongoDs",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}

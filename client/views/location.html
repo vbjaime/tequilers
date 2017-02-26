@@ -1,0 +1,30 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <a class="navbar-brand text-center" href="#">Select a location</a>
+</nav>
+<div class="container">
+ 	<div class="form-group">
+  		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle form-control" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  				Select a location
+			</button>
+			<div class="dropdown-menu form-control" aria-labelledby="dropdownMenuButton">
+ 				<button id="front-desk" class="dropdown-item" ng-click="clickLocation('frontDesk')">Front-desk</a>
+				<button id="patients-room" class="dropdown-item" ng-click="clickLocation('patientRoom')">Patient's room</a>
+				<button id="waiting-room" class="dropdown-item" ng-click="clickLocation('waitingRoom')">Waiting room</a>
+				<button id="other" class="dropdown-item" ng-click="clickOther()">Other</button>
+			</div>
+		</div>
+	</div>
+	<div id="form-other-location" class="form-control" ng-show="other">
+		<div class="form-group">
+			<label>Insert location: </label>
+			<input type="text" class="form-control" placeholder="Location">
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary form-control" ng-click="clickLocation('other')">Next</button>
+		</div>
+	</div>
+	<div>
+		<button class="form-control btn btn-secondary" ng-click="clickBackToAction()">Back</button>
+	</div>
+</div>
